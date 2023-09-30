@@ -1,11 +1,12 @@
 import React from "react";
 import { StyleSheet, SafeAreaView, Text, View, StatusBar } from "react-native";
+import { Searchbar } from "react-native-paper";
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.search}>
-        <Text>Search</Text>
+        <Searchbar />
       </View>
 
       <View style={styles.list}>
