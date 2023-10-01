@@ -1,36 +1,37 @@
 import React from "react";
-import { StyleSheet, SafeAreaView, View, StatusBar } from "react-native";
+import { SafeAreaView, View, StatusBar } from "react-native";
 import { Searchbar } from "react-native-paper";
 import RestaurantInfo from "../components/RestaurantInfo";
+import styled from "styled-components/native";
+
+const SafeArea = styled(SafeAreaView)`
+  flex: 1;
+  ${StatusBar.currentHeight && `margin-top: ${StatusBar.currentHeight}px`};
+`;
+
+const SearchView = styled(View)`
+  padding: 16px;
+  background-color: green;
+`;
+
+const RestaurantList = styled(View)`
+  flex: 1;
+  padding: 16px;
+  background-color: purple;
+`;
 
 const RestaurantsScreen = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.search}>
+    <SafeArea>
+      <SearchView>
         <Searchbar />
-      </View>
+      </SearchView>
 
-      <View style={styles.list}>
+      <RestaurantList>
         <RestaurantInfo />
-      </View>
-    </SafeAreaView>
+      </RestaurantList>
+    </SafeArea>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: StatusBar.currentHeight,
-  },
-  search: {
-    padding: 16,
-    backgroundColor: "green",
-  },
-  list: {
-    flex: 1,
-    padding: 16,
-    backgroundColor: "purple",
-  },
-});
 
 export default RestaurantsScreen;
