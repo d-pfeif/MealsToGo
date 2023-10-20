@@ -29,9 +29,9 @@ const RestaurantInfo = ({ restaurant = {} }) => {
   } = restaurant;
 
   const ratingArray = Array.from(new Array(Math.floor(rating)));
-  console.log(ratingArray);
+
   return (
-    <RestaurantCard elevation={5}>
+    <RestaurantCard elevation={4}>
       <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
       <Info>
         <Text variant="label">{name}</Text>
